@@ -20,9 +20,7 @@ $files = $stmt->fetchAll();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?= htmlspecialchars($company['description'] ?? 'Portal de archivos') ?>">
     <title>Dashboard - <?= htmlspecialchars($company['name']) ?></title>
-    <?php if (!empty($company['logo_filename'])): ?>
-        <link rel="icon" href="<?= htmlspecialchars($base_url) ?>uploads/<?= htmlspecialchars($company['logo_filename']) ?>">
-    <?php endif; ?>
+    <link rel="icon" href="<?= htmlspecialchars($base_url) ?>assets/img/favicon.ico">
     <base href="<?= htmlspecialchars($base_url . $current_instance['slug']) ?>/">
     <link rel="stylesheet" href="<?= htmlspecialchars($base_url) ?>assets/css/style.css">
     <script>

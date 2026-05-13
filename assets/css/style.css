@@ -74,6 +74,7 @@ html:not(.dark-theme) body {
     flex-direction: column;
     z-index: 1;
     width: 100%;
+    position: relative;
 }
 
 header {
@@ -406,6 +407,13 @@ header {
     text-align: center;
     padding: 4rem 2rem;
     color: var(--text-muted);
+}
+
+@media (min-width: 769px) {
+    header{
+        position: sticky;
+        top: 0;
+    }
 }
 
 @media (max-width: 768px) {

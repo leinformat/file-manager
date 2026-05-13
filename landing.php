@@ -18,6 +18,7 @@ if (basename($_SERVER['PHP_SELF']) === 'landing.php') {
             document.documentElement.classList.add('dark-theme');
         }
     </script>
+    <link rel="icon" href="<?= htmlspecialchars($base_url) ?>assets/img/favicon.ico">
     <style>
         .landing-container {
             max-width: 1200px;

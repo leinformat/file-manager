@@ -204,6 +204,7 @@ foreach ($global_settings_raw as $row) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Super Admin Dashboard</title>
     <link rel="stylesheet" href="<?= htmlspecialchars($base_url) ?>assets/css/style.css">
+    <link rel="icon" href="<?= htmlspecialchars($base_url) ?>assets/img/favicon.ico">
     <style>
         .badge { display: inline-block; padding: 0.25rem 0.5rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; }
         .badge-active { background: #dcfce7; color: #166534; }

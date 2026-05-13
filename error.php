@@ -12,6 +12,7 @@ if (!isset($base_url)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($error_title ?? 'Error') ?></title>
     <link rel="stylesheet" href="<?= htmlspecialchars($base_url) ?>assets/css/style.css">
+    <link rel="icon" href="<?= htmlspecialchars($base_url) ?>assets/img/favicon.ico">
     <script>
         const storedTheme = localStorage.getItem('theme');
         if (storedTheme === 'dark' || (!storedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {

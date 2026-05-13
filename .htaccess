@@ -1,0 +1,26 @@
+RewriteEngine On
+
+# Si el hosting requiere un RewriteBase, consúltalo con tu proveedor.
+# Generalmente On es suficiente para rutas dinámicas.
+
+# RUTINA DE PROTECCIÓN: Si el archivo o directorio FISICO existe, 
+# se detienen las reglas y se sirve directamente.
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Reglas especiales para ignorar si llegamos hasta aquí pero son carpetas protegidas
+RewriteRule ^(assets|uploads)/ - [L]
+
+# Rutas globales de SuperAdmin (no requieren prefijo de empresa)
+RewriteRule ^superadmin_login\.php$ - [L]
+RewriteRule ^superadmin_dashboard\.php$ - [L]
+
+# Si entra exactamente a la raiz, dejarlo ir a index (prevención de seguridad extra)
+RewriteRule ^index\.php$ - [L]
+
+# 1. Enrutar solo el nombre de la empresa a index.php (Ej: /acme)
+RewriteRule ^([^/]+)/?$ index.php?app=$1 [L,QSA]
+
+# 2. Enrutar nombre de la empresa + módulo (Ej: /acme/login.php)
+RewriteRule ^([^/]+)/(.+\.php)$ $2?app=$1 [L,QSA]
